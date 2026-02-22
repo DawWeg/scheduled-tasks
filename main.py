@@ -7,16 +7,16 @@ import pandas
 my_email = os.environ.get("MY_EMAIL")
 password = os.environ.get("MY_PASSWORD")
 
-bday_data = pandas.read_csv("scheduled-tasks\\birthdays.csv")
+bday_data = pandas.read_csv("birthdays.csv")
 today_day = dt.datetime.now().day
 today_month = dt.datetime.now().month
 
 letters = []
-with open("scheduled-tasks\letter_templates\letter_1.txt", "r") as file:
+with open("letter_templates\letter_1.txt", "r") as file:
     letters.append(file.read())
-with open("scheduled-tasks\letter_templates\letter_2.txt", "r") as file:
+with open("letter_templates\letter_2.txt", "r") as file:
     letters.append(file.read())
-with open("scheduled-tasks\letter_templates\letter_3.txt", "r") as file:
+with open("letter_templates\letter_3.txt", "r") as file:
     letters.append(file.read())
 
 for bday in bday_data.itertuples(index=False):
